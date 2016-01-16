@@ -1,0 +1,12 @@
+---
+#LightningOnDeath by MichaelM04
+death:
+  enabled: true
+  height: 0
+join:
+  enabled: true
+  height: 0
+quit:
+  enabled: true
+  height: 0
+...

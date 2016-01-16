@@ -1,3 +1,3 @@
-# LightningOnDeath
+# Lightning Strike
 
-#Lightning On Death Very Simple Just Strikes Lightning On Ground When A Player Dies
+#Lightning Strike Very Simple Just Strikes Lightning On Ground When A Player Dies,Joins,Quits

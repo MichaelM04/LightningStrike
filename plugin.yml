@@ -1,6 +1,6 @@
-name: LightningOnDeath
+name: Lightning Strike
 author: MichaelM04
-main: LightningOnDeath\Main
-version: 1.0
+main: LightningStrike\Main
+version: 2.0
 api: 1.13.0
-description: Lightning On Death Very Simple Just Strikes Lightning On Ground When A Player Dies
+description: Lightning Strike Very Simple Just Strikes Lightning On Ground When A Player Dies,Joins,Quits

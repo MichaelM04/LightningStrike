@@ -66,7 +66,7 @@ class Main extends PluginBase implements Listener{
     /**
      * @param PlayerQuitEvent $e
      */
-    public function onJoin(PlayerQuitEvent $e){
+    public function onQuit(PlayerQuitEvent $e){
       $e = $e->getPlayer();
       if(($this->lightning["quit"]["enabled"] === true)){
         $this->addStrike($p,$this->lightning["quit"]["height"]);

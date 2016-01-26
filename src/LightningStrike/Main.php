@@ -13,7 +13,7 @@ use pocketmine\entity\Entity;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
-class Main extends PluginBase implements Listener{
+class LightningStrike extends PluginBase implements Listener{
     /** @var Config */
     private $lightning;
     public function onLoad(){
@@ -23,53 +23,87 @@ class Main extends PluginBase implements Listener{
       $this->saveDefaultConfig();
       $this->lightning = $this->getConfig()->getAll();
       $this->getServer()->getPluginManager()->registerEvents($this, $this);
-      $this->getLogger()->info(TextFormat::GREEN."LIGHTNING DEATH RUNNING");
+      $this->getLogger()->info(TextFormat::GREEN."Lightning Strike RUNNING Made By MichaelM04");
     }
     /**
      * @param Player $p
      * @param $height
      */
     public function addStrike(Player $p, $height){
-      $level = $p->getLevel();
-      $light = new AddEntityPacket();
-      $light->type = 93;
-      $light->eid = Entity::$entityCount++;
-      $light->metadata = array();
-      $light->speedX = 0;
-      $light->speedY = 0;
-      $light->speedZ = 0;
-      $light->yaw = $p->getYaw();
-      $light->pitch = $p->getPitch();
-      $light->x = $p->x;
-      $light->y = $p->y+$height;
-      $light->z = $p->z;
-      Server::broadcastPacket($level->getPlayers(),$light);
-    }
-    /**
-     * @param PlayerDeathEvent $e
-     */
-    public function onDeath(PlayerDeathEvent $e){
-      $p = $e->getEntity();
-      if($p instanceof Player && ($this->lightning["death"]["enabled"] === true)){
-        $this->addStrike($p,$this->lightning["death"]["height"]);
-      }
-    }
-    /**
-     * @param PlayerJoinEvent $e
-     */
+
+$level = $p->getLevel();
+
+$light = new AddEntityPacket();
+
+$light->type = 93;
+
+$light->eid = Entity::$entityCount++;
+
+$light->metadata = array();
+
+$light->speedX = 0;
+
+$light->speedY = 0;
+
+$light->speedZ = 0;
+
+$light->yaw = $p->getYaw();
+
+$light->pitch = $p->getPitch();
+
+$light->x = $p->x;
+
+$light->y = $p->y+$height;
+
+$light->z = $p->z;
+
+Server::broadcastPacket($level->getPlayers(),$light);
+
+   }
     public function onJoin(PlayerJoinEvent $e){
-      $e = $e->getPlayer();
-      if(($this->lightning["join"]["enabled"] === true)){
-        $this->addStrike($p,$this->lightning["join"]["height"]);
-      }
+	$p = $e->getPlayer();
+	$light = new AddEntityPacket();
+        $light->type = 93;
+        $light->eid = Entity::$entityCount++;
+        $light->metadata = array();
+        $light->speedX = 0;
+        $light->speedY = 0;
+        $light->speedZ = 0;
+        $light->yaw = $p->getYaw();
+        $light->pitch = $p->getPitch();
+        $light->x = $p->x;
+        $light->y = $p->y;
+        $light->z = $p->z;
+
+Server::broadcastPacket($level->getPlayers(),$light);
+    	
     }
-    /**
-     * @param PlayerQuitEvent $e
-     */
+
     public function onQuit(PlayerQuitEvent $e){
-      $e = $e->getPlayer();
-      if(($this->lightning["quit"]["enabled"] === true)){
-        $this->addStrike($p,$this->lightning["quit"]["height"]);
-      }
+	$p = $e->getPlayer();
+	$light = new AddEntityPacket();
+        $light->type = 93;
+        $light->eid = Entity::$entityCount++;
+        $light->metadata = array();
+        $light->speedX = 0;
+        $light->speedY = 0;
+        $light->speedZ = 0;
+        $light->yaw = $p->getYaw();
+        $light->pitch = $p->getPitch();
+        $light->x = $p->x;
+        $light->y = $p->y;
+        $light->z = $p->z;
+      
+Server::broadcastPacket($level->getPlayers(),$light);
+    	
     }
+    public function onDeath(PlayerDeathEvent $e){
+
+$p = $e->getEntity();
+
+if($p instanceof Player && ($this->lightning["death"]["enabled"] === true)){
+
+$this->addStrike($p,$this->lightning["death"]["height"]);
+    }
+  }
 }

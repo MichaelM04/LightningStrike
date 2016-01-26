@@ -4,3 +4,14 @@ main: LightningStrike\Main
 version: 2.0
 api: 1.13.0
 description: Lightning Strike Very Simple Just Strikes Lightning On Ground When A Player Dies,Joins,Quits
+
+permissions:
+  lightningstrike.death:
+    default: op
+    description: "Allows players to get the lightning strike on death permission"
+  lightningstrike.join:
+    default: op
+    description: "Allows players to get the lightning strike on join permission"
+  lightningstrike.quit:
+    default: op
+    description: "Allows players to get the lightning strike on quit permission"

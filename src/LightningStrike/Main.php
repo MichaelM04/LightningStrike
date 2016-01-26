@@ -50,7 +50,7 @@ class Main extends PluginBase implements Listener{
      */
     public function onDeath(PlayerDeathEvent $e){
       $p = $e->getEntity();
-      if($p instanceof Player && ($this->lightning["death"]["enabled"] === true)){
+      if($p instanceof Player && ($this->lightning["death"]["enabled"] === true) && $p->hasPermission("lightningstrike.death")){
         $this->addStrike($p,$this->lightning["death"]["height"]);
       }
     }
@@ -59,7 +59,7 @@ class Main extends PluginBase implements Listener{
      */
     public function onJoin(PlayerJoinEvent $e){
       $e = $e->getPlayer();
-      if(($this->lightning["join"]["enabled"] === true)){
+      if(($this->lightning["join"]["enabled"] === true) && $p->hasPermission("lightningstrike.join")){
         $this->addStrike($p,$this->lightning["join"]["height"]);
       }
     }
@@ -68,7 +68,7 @@ class Main extends PluginBase implements Listener{
      */
     public function onQuit(PlayerQuitEvent $e){
       $e = $e->getPlayer();
-      if(($this->lightning["quit"]["enabled"] === true)){
+      if(($this->lightning["quit"]["enabled"] === true) && $p->hasPermission("lightningstrike.quit")){
         $this->addStrike($p,$this->lightning["quit"]["height"]);
       }
     }

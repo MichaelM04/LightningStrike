@@ -56,22 +56,13 @@ $light->z = $p->z;
 Server::broadcastPacket($level->getPlayers(),$light);
 
    }
-    public function onJoin(PlayerJoinEvent $e){
-	$p = $e->getPlayer();
-	$light = new AddEntityPacket();
-        $light->type = 93;
-        $light->eid = Entity::$entityCount++;
-        $light->metadata = array();
-        $light->speedX = 0;
-        $light->speedY = 0;
-        $light->speedZ = 0;
-        $light->yaw = $p->getYaw();
-        $light->pitch = $p->getPitch();
-        $light->x = $p->x;
-        $light->y = $p->y;
-        $light->z = $p->z;
+    public function onJoin(PlayerJoinEvent $e){ 
 
-Server::broadcastPacket($level->getPlayers(),$light);
+$p = $e->getEntity();
+
+if($p instance of player && ($p->haspermission("lightning strike.join")){
+
+$this->add strike($p,$this->lightning["join"]["height"]);
     	
     }
 

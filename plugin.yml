@@ -5,9 +5,9 @@ version: 2.1.0
 api: 1.0.0
 description: Lightning Strike Very Simple Just Strikes Lightning On Ground When A Player Dies And Joins
 Permissions:
-    lightningstrike.death
+    lightningstrike.death:
       description: Strikes lightning on death
       default: op
-    lightningstrike.join
+    lightningstrike.join:
       description: Strikes lightning on join
       default: op

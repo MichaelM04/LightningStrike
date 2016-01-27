@@ -60,9 +60,9 @@ Server::broadcastPacket($level->getPlayers(),$light);
 
 $p = $e->getPlayer();
 
-if($p instance of player && ($p->haspermission("lightning strike.join")){
+if($p instance of player && ($p->haspermission("lightningstrike.join")){
 
-$this->add strike($p,$this->lightning["join"]["height"]);
+$this->addstrike($p,$this->lightning["join"]["height"]);
     	
     }
 

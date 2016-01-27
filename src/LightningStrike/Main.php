@@ -58,7 +58,7 @@ Server::broadcastPacket($level->getPlayers(),$light);
    }
     public function onJoin(PlayerJoinEvent $e){ 
 
-$p = $e->getEntity();
+$p = $e->getPlayer();
 
 if($p instance of player && ($p->haspermission("lightning strike.join")){
 

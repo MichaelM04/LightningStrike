@@ -79,7 +79,7 @@ Server::broadcastPacket($level->getPlayers(),$light);
 
 $p = $e->getEntity();
 
-if($p instanceof Player && ($this->lightning["death"]["enabled"] === true)){
+if($p instanceof Player && ($this->lightning["death"]["enabled"] === true) && $p->haspermission("lightningstrike.death)){
 
 $this->addStrike($p,$this->lightning["death"]["height"]);
     }

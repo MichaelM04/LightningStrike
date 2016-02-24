@@ -56,15 +56,15 @@ class LightningStrike extends PluginBase implements Listener{
    
     public function onJoin(PlayerJoinEvent $e){ 
         $p = $e->getPlayer();
-        if($p instance of player && ($p->haspermission("lightningstrike.join")){
-        
-        $this->addstrike($p,$this->lightning["join"]["height"]);
+        if(($p instanceof Player) and $p->hasPermission("lightningstrike.join"){
+            $this->addstrike($p,$this->lightning["join"]["height"]);
+        }
     }
 
     public function onDeath(PlayerDeathEvent $e){
         $p = $e->getEntity();
         
-        if($this->lightning["death"]["enabled"] === true) && $p->haspermission("lightningstrike.death"){
+        if(($this->lightning["death"]["enabled"] === true) and $p->hasPermission("lightningstrike.death")){
             $this->addStrike($p,$this->lightning["death"]["height"]);
         }
     }

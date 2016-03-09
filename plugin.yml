@@ -2,7 +2,10 @@ name: Lightning Strike
 author: MichaelM04
 main: LightningStrike\LightningStrike
 version: 2.1.0
-api: 1.0.0
+api: 
+- 1.0.0
+- 2.0.0
+
 description: Lightning Strike Very Simple Just Strikes Lightning On Ground When A Player Dies And Joins
 permissions:
     lightningstrike.death:

@@ -1,0 +1,9 @@
+---
+#LightningStrike config by MichaelM04
+join:
+   enabled: true
+   height: 0
+death:
+   enabled: true
+   height: 0
+...
